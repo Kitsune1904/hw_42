@@ -1,0 +1,13 @@
+form {
+  width: 500px;
+}
+
+.error {
+  font-size: 14px;
+  color: #bd0000;
+}
+
+button {
+  margin-top: 10px;
+}
+
