@@ -8,6 +8,8 @@ import {Details} from "./components/Alums/Details/Details.jsx";
 import {AlbumsProvider} from "./context/AlbumsProvider.jsx";
 import {Notes} from "./components/Notes/Notes.jsx";
 
+/*basename={'/hw_42'}*/
+
 function App() {
   return (
     <AlbumsProvider>

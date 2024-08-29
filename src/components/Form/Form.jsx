@@ -1,6 +1,6 @@
 import {ErrorMessage, Field, Form, Formik, useFormik} from "formik";
 import * as Yup from 'yup';
-import './Form.css'
+import classes from './Form.module.css'
 
 export const UserForm = (props) => {
     const formik = useFormik({
@@ -39,7 +39,7 @@ export const UserForm = (props) => {
                 max={10}
                 onChange={formik.handleChange}
                 style={{padding: '5px 10px'}}/>
-            {formik.errors.title ? <p className='error'>{formik.errors.title}</p> : null}
+            {formik.errors.title ? <p className={classes.error}>{formik.errors.title}</p> : null}
 
             <label htmlFor="text">Note text</label>
             <input
@@ -51,35 +51,10 @@ export const UserForm = (props) => {
                 max={50}
                 onChange={formik.handleChange}
                 style={{padding: '5px 10px'}}/>
-            {formik.errors.text ? <p className='error'>{formik.errors.text}</p> : null}
+            {formik.errors.text ? <p className={classes.error}>{formik.errors.text}</p> : null}
 
             {!formik.isSubmitting && <button type='submit' style={{padding: '5px 10px'}}>Save</button>}
         </form>
     )
 }
 
-
-/*
-export const UserForm = () => {
-    return (
-        <Formik
-            initialValues={{name: '', email: ''}}
-            onSubmit={(values) => {
-                setTimeout(() => {
-                    console.log(values, formikHelpers)
-                    formikHelpers.setSubmitting(false)
-                }, 2000)
-
-            }}>
-            {({isSubmitting}) => (
-                <Form style={{padding: '20px',display: 'flex', flexDirection: 'column', gap: '5px'}}>
-                    <Field name='name' type='text' style={{padding: '5px 10px'}}/>
-                    <Field name='email' type='email' style={{padding: '5px 10px'}}/>
-
-                    {!isSubmitting && <button type='submit' style={{padding: '5px 10px'}}>Save</button>}
-
-                </Form>
-            )}
-        </Formik>
-    )
-}*/
